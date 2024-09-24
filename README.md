@@ -18,7 +18,7 @@ Add this to your `Cargo.toml`:
 ```toml
 [dependencies]
 yt-search = "0.1.0"
-tokio = { version = "1.0", features = ["full"] }
+tokio = { version = "1.40.0", features = ["full"] }
 ```
 
 Note: This library uses tokio for asynchronous operations. Make sure to include it in your dependencies.
