@@ -1,6 +1,10 @@
 [package]
 name = "yt-search"
 version = "0.1.0"
+authors = ["Tyler <tkoz.dev@gmail.com>"]
+description = "A simple YouTube search library"
+license = "MIT"
+repository = "https://github.com/tkozzer/yt-search"
 edition = "2021"
 
 [dependencies]
