@@ -52,13 +52,6 @@ impl YouTubeSearch {
             e
         })?;
 
-        if debug {
-            env_logger::init();
-            log::set_max_level(log::LevelFilter::Debug);
-        } else {
-            log::set_max_level(log::LevelFilter::Info);
-        }
-
         Ok(YouTubeSearch {
             client,
             proxy,
