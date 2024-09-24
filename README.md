@@ -17,7 +17,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-youtube_search_lib = "0.1.0"
+yt-search = "0.1.0"
 ```
 
 ## Tor/SOCKS Proxy Setup (Recommended)
@@ -55,7 +55,7 @@ For other operating systems, please refer to the [Tor Project's documentation](h
 Here's a basic example of how to use the library with the Tor SOCKS proxy:
 
 ```rust
-use youtube_search_lib::{YouTubeSearch, SearchFilters, SortBy, Duration};
+use yt_search::{YouTubeSearch, SearchFilters, SortBy, Duration};
 
 #[tokio::main]
 async fn main() {
