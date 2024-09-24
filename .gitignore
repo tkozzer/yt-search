@@ -1,1 +1,47 @@
+# Rust build artifacts
 /target
+**/*.rs.bk
+Cargo.lock
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Generated documentation
+/doc
+
+# Test coverage reports
+/coverage
+
+# Environment variables
+.env
+
+# Compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Backup files
+*~
+
+# Search results and input data
+search_results.json
+examples.csv
+sp_codes.json
+
+# Entire documents directory
+/documents/
