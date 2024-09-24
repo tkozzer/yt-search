@@ -58,17 +58,23 @@ For other operating systems, please refer to the [Tor Project's documentation](h
 Here's a basic example of how to use the library with the Tor SOCKS proxy:
 
 ```rust
-use yt_search::{YouTubeSearch, SearchFilters, SortBy, Duration};
+use yt_search::{Duration, SearchFilters, SortBy, YouTubeSearch};
 
 #[tokio::main]
 async fn main() {
     // Use the Tor SOCKS proxy
-    let search = YouTubeSearch::new(Some("socks5://127.0.0.1:9050"), false);
+    let search = match YouTubeSearch::new(Some("socks5://127.0.0.1:9050".to_string()), false) {
+        Ok(search) => search,
+        Err(e) => {
+            eprintln!("Failed to initialize YouTubeSearch: {}", e);
+            return;
+        }
+    };
     let filters = SearchFilters {
         sort_by: Some(SortBy::ViewCount),
         duration: Some(Duration::Long),
     };
-    
+
     match search.search("rust programming", filters).await {
         Ok(results) => {
             for result in results {
@@ -77,7 +83,7 @@ async fn main() {
                 println!("Views: {}", result.view_count);
                 println!("---");
             }
-        },
+        }
         Err(e) => eprintln!("Search error: {}", e),
     }
 }
